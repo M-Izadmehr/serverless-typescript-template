@@ -1,3 +1,11 @@
+# Serverless Boilerplate
+Out of box support for:
+* serverless-offline
+* serverless-webpack
+* serverless-dynamodb-local
+* puppeteer
+* typescript
+
 # Steps to setup
 1. Make sure you have node 12 or newer installed: [DownloadLink](https://nodejs.org/en/)
 ```

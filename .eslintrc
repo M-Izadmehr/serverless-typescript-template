@@ -1,0 +1,34 @@
+{
+    "parser": "babel-eslint",
+    "plugins": ["prettier", "sonarjs"],
+    "parserOptions": {},
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "tabWidth": 4,
+                "printWidth": 100,
+                "semi": false,
+                "trailingComma": "es5",
+                "bracketSpacing": true,
+                "parser": "flow",
+                "singleQuote": true
+            }
+        ],
+        "no-console": "off",
+        "prefer-const": "error",
+        "no-unused-vars": "error",
+        "prefer-template": "error"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:sonarjs/recommended"
+    ],
+    "env": {
+        "shared-node-browser": true,
+        "node": true,
+        "es6": true,
+        "jest": true
+    }
+}

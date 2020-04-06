@@ -1,0 +1,40 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+swagger/swagger.yml
+
+# important
+.env
+.idea
+.gradle
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+#coverage
+coverage
+
+# Optional npm cache directory
+.npm
+
+#coverage
+coverage
+dist
+
+# OSX junk
+.DS_Store
+
+*.orig
+.webpack
+temp
+.dynamodb
+.scannerwork
+.terraform
+
+# Contract testing
+pacts

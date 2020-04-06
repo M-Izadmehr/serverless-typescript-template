@@ -1,0 +1,52 @@
+service: serverless-boilerplate
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  profile: myAws
+  region: eu-west-1
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+  - serverless-dynamodb-local
+
+functions:
+  test:
+    handler: src/functions/test/test.handler
+    events:
+      - http:
+          path: ${opt:stage, self:provider.stage}/test
+          method: GET
+
+resources:
+  Resources:
+    userTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${opt:stage, self:provider.stage}-users
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
+custom:
+  dynamodb:
+    stages:
+      - ${self:provider.stage}
+  serverless-offline:
+    httpPort: 4000
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    packager: yarn
+    packagerOptions: {}
+
+package:
+  exclude:
+    - node_modules/puppeteer/.local-chromium/**

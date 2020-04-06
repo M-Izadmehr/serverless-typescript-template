@@ -5,6 +5,7 @@ Out of box support for:
 * serverless-dynamodb-local
 * puppeteer
 * typescript
+* vscode debug config
 
 # Steps to setup
 1. Make sure you have node 12 or newer installed: [DownloadLink](https://nodejs.org/en/)

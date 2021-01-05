@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@serverless-chrome/lambda": "1.0.0-38",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chrome-launcher": "^0.12.0",
     "joi": "^14.3.1",
     "path-to-regexp": "^6.1.0",
